@@ -111,6 +111,7 @@ a {
 }
 .brunchtext h1 {
     color: black;
+    font-family: 'Rasa', serif;
 }
 .showdecription {
     font-size: 19px;
@@ -122,6 +123,7 @@ a {
     border-color: 7px solid gray;
     padding: 0px 10px;
     color: black;
+    font-family: 'Roboto', sans-serif;
 }
 
 .actualreview {
