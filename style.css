@@ -15,7 +15,7 @@ body {
 }
 a {
     text-decoration: none;
-    color: gray;
+    color: #474f43;
 }
 .header {
     height: 30px;
@@ -32,9 +32,10 @@ a {
 
 }
 .logo {
-    border: 2px solid black;
+    border: 2px solid #474f43;
     padding: 2px;
     border-radius: 2px;
+    color: #474f43;
 }
 .aboutme {
     font-weight: normal;
@@ -63,13 +64,25 @@ a {
     width: 100%;
 }
 .highlightcomp {
-    background-color: #90C978;
+    background-color: #474f43;
     border-radius: 5px;
     color: white;
     font-style: italic;
-    padding: 0px 3px;
+    padding: 0px 5px;
 }
 .highlightcomp:hover {
     background-color: transparent;
-    text-shadow: 0px 0px 2px black;
+    text-shadow: 0px 0px 2px #474f43;
+}
+.footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    height: 75px;
+}
+.right {
+    float: right;
+}
+.footer a {
+    margin: 10px 75px 5px 0px;
 }
