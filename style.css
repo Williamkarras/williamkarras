@@ -100,9 +100,9 @@ a {
     width: 100%;
 }
 .brunchlargerbox {
-    margin: 0px 15%;
+    margin: 0px 12%;
     display: grid;
-    grid-gap: 20px;
+    grid-gap: 0px;
     grid-template-columns: 1fr 1fr;
     justify-content: center;
     align-content: center;
@@ -110,15 +110,15 @@ a {
     justify-items: center;
 }
 .brunchtext h1 {
-    color: black;
+    color: #474f43;
     font-family: 'Rasa', serif;
 }
 .showdecription {
-    font-size: 19px;
+    font-size: 16px;
     font-weight: 400;
 }
 .brunchtext {
-    background-color: rgb(71,79,67, 0.65);
+    background-color: rgb(225,225,225, 0.35);
     border-radius: 2px;
     border-color: 7px solid gray;
     padding: 0px 10px;
@@ -131,9 +131,12 @@ a {
 }
 .reviewer {
     font-weight: bold;
-    color: black;
+    color: #474f43;
 }
 .brunchaudio {
     margin: 0 auto;
     padding: 5px 40px;
+}
+.brunchposter {
+    border: 2px solid black;
 }
