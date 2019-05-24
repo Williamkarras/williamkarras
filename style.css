@@ -183,8 +183,9 @@ h2.heading1 {
     margin-top: 50px;
 }
 .footer2 {
+    margin: 10px 0px 0px 0px;
     width: 100%;
-    height: 85px;
+    height: 60px;
     text-align: center;
 }
 .footer2 a {
@@ -192,11 +193,11 @@ h2.heading1 {
 }
 
 .bio {
-    width: 95%;
+    width: 85%;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-gap: 50px;
+    grid-gap: 30px;
 }
 .biotext {
     background-color: rgb(225,225,225, 0.35);
