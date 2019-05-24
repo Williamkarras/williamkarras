@@ -44,9 +44,12 @@ a {
     text-emphasis: none;
     font-weight: normal;
     font-size: 42px;
+    margin-top: 32px;
+    margin-bottom: 0px;
 }
 #heading2 {
     font-size: 35px;
+    margin-top: 0px;
 }
 #imwill {
     font-weight: bold;
@@ -56,11 +59,16 @@ a {
     height: 300px;
     text-align: left;
     margin: 0px 300px 0px 410px;
-    padding: 244px 0px;
+    padding: 267px 0px 221px 0px;
 }
 .page1 {
     justify-content: center;
     height: 1000px;
+    width: 100%;
+}
+.page3 {
+    justify-content: center;
+    height: 800px;
     width: 100%;
 }
 .highlightcomp {
@@ -99,6 +107,7 @@ a {
     height: 700px;
     width: 100%;
 }
+
 .brunchlargerbox {
     margin: 0px 12%;
     display: grid;
@@ -144,19 +153,73 @@ a {
     font-family: 'Rasa', serif;
     background-image: url("images/background.png");
     background-size: 1440px 900px;
-    height: 700px;
     background-color: #c5cbc2;
 }
 .presentation2 {
     width: 650px;
-    height: 300px;
+    height: 140px;
     text-align: left;
     margin: 0px 300px 0px 410px;
-    padding: 100px 0px;
+    padding: 0px 0px 0px 0px;
 }
 .highlightcomp2 {
     background-color: #474f43;
     border-radius: 5px;
     color: white;
     padding: 0px 5px;
+}
+#aboutheading {
+    font-size: 29px;
+    margin-top: 0px;
+}
+h2.heading1 {
+    font-size: 35px;
+    margin-bottom: 0px;
+    margin-top: 50px;
+}
+.footer2 {
+    width: 100%;
+    height: 85px;
+    text-align: center;
+}
+.footer2 a {
+    margin: 0px 15px;
+}
+
+.bio {
+    width: 95%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 50px;
+}
+.biotext {
+    background-color: rgb(225,225,225, 0.35);
+    border-radius: 22px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 0px 10px;
+    line-height: 25px;
+}
+.willpic {
+    border: 3px solid gray;
+    border-radius: 22px;
+}
+.capitalize {
+    text-transform: capitalize;
+}
+.headerabout {
+    height: 30px;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 100px;
+    display: grid;
+    padding: 0px 0px 0px 0px;
+    grid-template-areas: "logo spacer aboutme";
+    grid-template-columns: 1fr 3fr 1fr;
+    justify-items: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
 }
