@@ -134,9 +134,10 @@ a {
 }
 .brunchtext {
     background-color: rgb(225,225,225, 0.35);
-    border-radius: 22px;
+    border-radius: 8px;
     border-color: 7px solid gray;
     padding: 0px 10px;
+    width: 80%;
     color: black;
     font-family: 'Roboto', sans-serif;
 }
@@ -202,7 +203,7 @@ h2.heading1 {
 }
 .biotext {
     background-color: rgb(225,225,225, 0.35);
-    border-radius: 22px;
+    border-radius: 8px;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 300;
@@ -211,7 +212,7 @@ h2.heading1 {
 }
 .willpic {
     border: 3px solid gray;
-    border-radius: 22px;
+    border-radius: 8px;
 }
 .capitalize {
     text-transform: capitalize;
@@ -230,3 +231,35 @@ h2.heading1 {
     position: fixed;
     top: 0;
 }
+
+form {
+    max-width: 400px;
+    font-family: sans-serif;
+    padding: 1em;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input, textarea, button {
+    width: 100%;
+    padding: 0.5em;
+    margin-top: 0.3em;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: #474f43;
+    color: white;
+    border: none;
+    margin-top: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: #555;
+  }
