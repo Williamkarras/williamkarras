@@ -116,6 +116,7 @@ a {
     border-bottom: 1px solid #ccc;
     margin-bottom: 2rem;
     text-align: center;
+    padding-left: 30px;
   }
 .page2 {
     height: 100vh;
