@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>William Karras</title>
     <meta name="description" content="William Karras is a composer, director, and performer specializing in theatre and film music. He's alaso a piano bar entertainer. Explore his portfolio and contact him for collaborations.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Rasa:400,700|Roboto:400,500,700&display=swap" rel="stylesheet">
 
@@ -21,11 +22,10 @@
         <div class="page1">
             <div class="presentation">
                 <h1 class="heading1">Hey, <strong id="imwill">I'm Will</strong></h1>
-                <h1 class="heading2" id="heading2">I <a href="https://soundcloud.com/william-karras" target="_blank" class="highlightcomp">compose, direct & perform music</a> <br>for Theatre & Film. <br>-And sometimes even by itself!</h1>
-            </div>
+<h1 class="heading2" id="heading2"><span class="no-break">I <a href="https://soundcloud.com/william-karras" target="_blank" class="highlightcomp">compose, direct & perform music</a></span> <br>for Theatre & Film. <br>-And sometimes even by itself!</h1>            </div>
         </div>
     </div>
-    <div class="page2" id="page2"">
+    <div class="page2" id="page2">
         <div class="contact-box">
             <div class="contact-text">
                 <h1 class="contact">Contact Me</h1>
@@ -49,10 +49,9 @@
                 
                 </div><br>
             </div>
-            <div class="brunchimage">
-                <div class="brunchaudio">
-                    <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/871597739&color=%23474f43&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/william-karras" title="William Karras" target="_blank" style="color: #cccccc; text-decoration: none;">William Karras</a> · <a href="https://soundcloud.com/william-karras/sets/songs" title="Songs" target="_blank" style="color: #cccccc; text-decoration: none;">Songs</a></div>
-            </div>
+                 <div id="brunch-container">
+    <!-- Brunch section will be inserted here on desktop only -->
+</div>
             </div>
         </div>
     </div>
@@ -63,7 +62,6 @@
             <span class="scrolldown">↓↓Scroll down to hear my music and get in touch! ↓↓</span>
         </div>
         <div class="right">
-            <a href="https://twitter.com/William_karras" target="_blank"><img src="images/twitter.png" width="42" height="42"></a>
             <a href="https://www.instagram.com/williamkarras/" target="_blank"><img src="images/ig.png" width="42" height="42"></a>
             <a href="https://soundcloud.com/william-karras" target="_blank"><img src="images/sc.png" width="42" height="42"></a>
             <a href="https://open.spotify.com/album/4ZeuofdsUoqm1EsTo4dX0B?si=G_12BMDoTrOaLFtWq2pKdQ" target="_blank"><img src="images/spotify.png" width="42" height="42"></a>
@@ -105,6 +103,22 @@
     }
   }
 });
+// Only load brunch section (image + audio) on desktop (768px and above)
+if (window.innerWidth > 768) {
+    document.getElementById('brunch-container').innerHTML = `
+        <div class="brunchimage">
+            <div class="brunchaudio">
+                <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" 
+                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/871597739&color=%23474f43&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+                </iframe>
+                <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                    <a href="https://soundcloud.com/william-karras" title="William Karras" target="_blank" style="color: #cccccc; text-decoration: none;">William Karras</a> · 
+                    <a href="https://soundcloud.com/william-karras/sets/songs" title="Songs" target="_blank" style="color: #cccccc; text-decoration: none;">Songs</a>
+                </div>
+            </div>
+        </div>
+    `;
+}
       </script>
 </body>
 </html>

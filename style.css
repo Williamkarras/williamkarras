@@ -5,7 +5,12 @@ html, body {
     scroll-behavior: smooth;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
+     overflow-x: hidden; /* This prevents horizontal scrolling */
+    max-width: 100vw; /* Ensures body doesn't exceed viewport width */
   }
+  * {
+    box-sizing: border-box;
+}
   .body {
     height: 100vh;
     display: flex;
@@ -46,30 +51,29 @@ a {
 }
 @media (max-width: 480px) {
     .header {
-      grid-template-columns: 1fr auto 1fr;
-      padding: 0 10px;
-      position: fixed;
-      height: 50px;
+        grid-template-columns: 1fr auto 1fr;
+        padding: 0 10px;
+        position: fixed;
+        height: 50px;
     }
     .logo {
-      font-size: 1.5rem;
-    }
-    .aboutme {
-      font-size: 0.9rem;
+        justify-self: start; /* Move just the logo to the left */
     }
   }
 .logo {
-    border: 2px solid #474f43;
-    padding: 2px;
-    border-radius: 2px;
-    color: #474f43;
-    font-size: 1.5rem;
+  border: 2px solid #474f43;
+  padding: 2px;
+  border-radius: 2px;
+  color: #474f43;
+  font-size: clamp(1.5rem, 8vw, 2.5rem); /* Reduced max from 4rem to 2.5rem */
 }
+
 .aboutme {
-    font-weight: normal;
-    transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
-    cursor: pointer;
-  }
+  font-weight: normal;
+  font-size: clamp(1.2rem, 6vw, 2rem); /* Reduced max from 3rem to 2rem */
+  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+  cursor: pointer;
+}
   
   .aboutme:hover {
     color: #6a8e6a; 
@@ -78,16 +82,12 @@ a {
     letter-spacing: 1px; 
     font-weight: bold;
   }
-.presentation h1 {
-    text-emphasis: none;
-    font-weight: normal;
-    font-size: 42px;
-    margin-top: 32px;
-    margin-bottom: 0px;
-}
 #heading2 {
-    font-size: 35px;
+    font-size: clamp(1.5rem, 6vw, 3rem);
     margin-top: 0px;
+}
+.no-break {
+  white-space: nowrap;
 }
 #imwill {
     font-weight: bold;
@@ -96,12 +96,20 @@ a {
     width: 90%;     /* default fluid width */
     margin: 0 auto; /* center on smaller screens */
     padding: 80px 0 60px 0; /* reduce padding for mobile */
+    text-align: center;
   }
+  .presentation h1 {
+    text-emphasis: none;
+    font-weight: normal;
+    font-size: clamp(2rem, 8vw, 4rem);
+    margin-top: 32px;
+    margin-bottom: 0px;
+}
 /* Desktop & large tablets */
 @media (min-width: 769px) {
     .presentation {
       width: 650px;
-      margin: 0 300px 0 410px;
+      margin: 0 auto; /* Change this from fixed margins to auto centering */
       padding: 267px 0 221px 0;
       text-align: left;
     }
@@ -119,11 +127,7 @@ a {
     }
   
     .presentation {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 90%;
+     width: 90%;
       max-width: 400px;
       margin: 0 auto;
       padding: 0;
@@ -131,18 +135,23 @@ a {
     }
   
     .presentation h1 {
-      font-size: 2.2rem;
+       font-size: 2.8rem;
+    margin-top: 16px;
     }
   
     #heading2 {
-      font-size: 1.6rem;
+      font-size: 2rem;
     }
   }
   
   
 .page1 {
-    justify-content: center;
-    width: 100%;
+     display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
 }
 .pageabout {
     justify-content: center;
@@ -173,11 +182,6 @@ a {
     opacity: 0.7;
     padding: 0 15px;
 }
-@media (max-width: 480px) {
-    .footer a {
-      margin: 10px 15px 10px 0;
-    }
-  }
 .right {
     float: right;
 }
@@ -185,20 +189,34 @@ a {
     margin: 10px 75px 10px 0px;
 }
 
+@media (max-width: 480px) {
+   .footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .footer a {
+      margin: 10px 15px 10px 0;
+    }
+    .right {
+        float: none; /* This is the key line! */
+    }
+  }
 .scrolldown {
     color: #474f43;
     font-style: italic;
     padding: 1rem 0;
-    border-bottom: 1px solid #ccc;
     margin-bottom: 2rem;
     text-align: center;
   }
 .page2 {
-    height: 100vh;
+    min-height: 100vh; /* Changed from fixed height */
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px 0;
 }
 
 .contact-box {
@@ -210,6 +228,11 @@ a {
   margin: 2rem auto;
   padding: 1rem;
     
+}
+@media (max-width: 767px) {
+    .contact-box {
+        margin-top: 6rem; /* Adjust this value as needed */
+    }
 }
 .contact-text h1 {
     color: #474f43;
@@ -266,15 +289,23 @@ a {
 #aboutpage {
     font-family: 'Rasa', serif;
     background-image: url("images/background.png");
+    background-repeat: no-repeat;
     background-size: 1440px 900px;
+    background-position: center;
     background-color: #c5cbc2;
 }
+@media (max-width: 480px) {
+    #aboutpage {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
 .presentation2 {
-    width: 650px;
-    height: 140px;
-    text-align: left;
-    margin: 0px 300px 0px 410px;
-    padding: 0px 0px 0px 0px;
+      width: 90%;     /* default fluid width */
+    margin: 0 auto; /* center on smaller screens */
+    padding: 10px 0 5px 0; /* reduce padding for mobile */
+    text-align: center;
 }
 .highlightcomp2 {
     background-color: #474f43;
@@ -292,21 +323,20 @@ a {
 
 }
 #aboutheading {
-    font-size: 29px;
+    font-size: clamp(1rem, 3vw, 1.5rem);
     margin-top: 0px;
 }
 h2.heading1 {
-    font-size: 35px;
+    font-size: clamp(1rem, 3vw, 1.5rem);
     margin-bottom: 0px;
     margin-top: 50px;
 }
 .footer2 {
-    margin: 10px 0px 0px 0px;
     width: 100%;
     height: 60px;
     text-align: center;
-    
 }
+
 .footer2 a {
     margin: 0px 15px;
 }
@@ -334,19 +364,17 @@ h2.heading1 {
 .capitalize {
     text-transform: capitalize;
 }
+/* Header that stays at the top of the page (not screen) */
 .headerabout {
-    height: 30px;
+    position: static; /* or just remove position entirely */
     width: 100%;
-    font-family: 'Roboto', sans-serif;
-    margin-bottom: 100px;
+    height: 30px;
+    margin-bottom: 20px; /* Add some space below the header */
     display: grid;
-    padding: 0px 0px 0px 0px;
-    grid-template-areas: "logo spacer aboutme";
     grid-template-columns: 1fr 3fr 1fr;
-    justify-items: center;
     align-items: center;
-    position: fixed;
-    top: 0;
+    justify-items: center;
+    font-family: 'Roboto', sans-serif;
 }
 
 form {
@@ -381,12 +409,7 @@ form {
     background-color: #555;
   }
 
-  html, body {
-    scroll-behavior: smooth;
-    height: 100%;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-  }
+  
   
   .page1, .page2 {
     scroll-snap-align: start;
@@ -462,3 +485,31 @@ a[href="index.html"]:hover {
       font-size: 1.5rem;
     }
   }
+@media (max-width: 480px) {
+    .bio {
+        width: 95%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .biotext {
+        order: 1; /* Bio text first */
+    }
+    
+    .footer2 {
+        order: 2; /* Footer second */
+        margin-bottom: 20px;
+    }
+    
+    .biopic {
+        order: 3; /* Image last */
+        text-align: center;
+    }
+    
+    .willpic {
+        max-width: 100%;
+        height: auto;
+        width: 280px;
+    }
+}
