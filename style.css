@@ -6,6 +6,11 @@ html, body {
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
   }
+  .body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
 #mainpage {
     font-family: 'Rasa', serif;
     background-image: url("images/background.png");
@@ -90,30 +95,51 @@ a {
 .presentation {
     width: 90%;     /* default fluid width */
     margin: 0 auto; /* center on smaller screens */
+    padding: 80px 0 60px 0; /* reduce padding for mobile */
   }
-  
-  @media (min-width: 768px) {
+/* Desktop & large tablets */
+@media (min-width: 769px) {
     .presentation {
       width: 650px;
       margin: 0 300px 0 410px;
       padding: 267px 0 221px 0;
+      text-align: left;
     }
   }
-  @media (max-width: 480px) {
+  
+  /* Mobile & small tablets */
+  @media (max-width: 768px) {
+    .page1 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 0;
+    }
+  
     .presentation {
-      padding-top: 150px;
-      padding-bottom: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 90%;
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 0;
       text-align: center;
     }
   
     .presentation h1 {
-      font-size: 2rem;
+      font-size: 2.2rem;
     }
   
     #heading2 {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
     }
   }
+  
+  
 .page1 {
     justify-content: center;
     width: 100%;
