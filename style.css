@@ -38,7 +38,17 @@ a {
 }
 .aboutme {
     font-weight: normal;
-}
+    transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .aboutme:hover {
+    color: #6a8e6a; 
+    transform: rotate(-13deg) scale(1.1); 
+    text-shadow: 1px 1px 2px rgba(106, 142, 106, 0.7); 
+    letter-spacing: 1px; 
+    font-weight: bold;
+  }
 .presentation h1 {
     text-emphasis: none;
     font-weight: normal;
@@ -75,10 +85,15 @@ a {
     color: white;
     font-style: italic;
     padding: 0px 5px;
+    display: inline-block;
+    transition: color 0.3s ease, background-color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
 }
 .highlightcomp:hover {
     background-color: transparent;
-    text-shadow: 0px 0px 2px #474f43;
+    text-shadow: 0px 0px 2px #737572;
+    color: #474f43;
+    transform: scale(1.03);
+
 }
 .footer {
     width: 100%;
@@ -179,6 +194,15 @@ a {
     border-radius: 5px;
     color: white;
     padding: 0px 5px;
+    display: inline-block;
+    transition: color 0.3s ease, background-color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+}
+.highlightcomp2:hover {
+    background-color: transparent;
+    text-shadow: 0px 0px 2px #737572;
+    color: #474f43;
+    transform: scale(1.03);
+
 }
 #aboutheading {
     font-size: 29px;
@@ -194,6 +218,7 @@ h2.heading1 {
     width: 100%;
     height: 60px;
     text-align: center;
+    
 }
 .footer2 a {
     margin: 0px 15px;
@@ -288,4 +313,59 @@ form {
   .scrolldown.hidden {
     opacity: 0;
     pointer-events: none; /* prevents interaction when hidden */
+  }
+
+  .footer a img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .footer a:hover img {
+    transform: scale(1.1);
+  }
+
+  .footer2 a img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .footer2 a:hover img {
+    transform: scale(1.1);
+  }
+  #aboutpage {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+  
+  #aboutpage.fade-in {
+    opacity: 1;
+  }
+
+  .logo,
+a[href="index.html"] {
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.logo:hover,
+a[href="index.html"]:hover {
+  transform: scale(1.1);
+}
+
+.contact-button {
+    background-color: #474f43;
+    color: white;
+    font-family: 'Rasa', serif;
+    font-size: 20px;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(71, 79, 67, 0.3);
+    white-space: nowrap;
+  }
+  
+  .contact-button:hover {
+    background-color: #6a8e6a;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(106, 142, 106, 0.5);
   }

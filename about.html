@@ -11,7 +11,9 @@
 </head>
 <body id="aboutpage">
     <div class="headerabout">
-        <h3 class="logo">wk</h3>
+        <a href="index.html">
+            <h3 class="logo">WK</h3>
+          </a>
         <div class="spacer"></div>
         <a href="index.html"><img src="images/x.png" width="42" height="42"></a>
     </div>
@@ -53,11 +55,28 @@
     </div>
     <div class="footer2">
         <div class="center">
-            <a href="https://www.linkedin.com/in/william-karras/" target="_blank"><img src="images/in.png" width="42" height="42"></a>
             <a href="https://twitter.com/William_karras" target="_blank"><img src="images/twitter.png" width="42" height="42"></a>
             <a href="https://www.instagram.com/williamkarras/" target="_blank"><img src="images/ig.png" width="42" height="42"></a>
             <a href="https://soundcloud.com/william-karras" target="_blank"><img src="images/sc.png" width="42" height="42"></a>
             <a href="https://open.spotify.com/album/4ZeuofdsUoqm1EsTo4dX0B?si=G_12BMDoTrOaLFtWq2pKdQ" target="_blank"><img src="images/spotify.png" width="42" height="42"></a>
+            <br>
+            <br>
+            <a href="index.html#page2" class="contact-button">Contact Me</a>
         </div>
     </div>
+
+    <script>
+        window.addEventListener("DOMContentLoaded", function () {
+          const about = document.getElementById("aboutpage");
+          if (about) {
+            // Wait a tick so the page doesn't flash fully visible before transition
+            requestAnimationFrame(() => {
+              about.classList.add("fade-in");
+            });
+          }
+        });
+
+        
+      </script>
+      
 </body>
