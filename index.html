@@ -5,7 +5,6 @@
     <title>William Karras</title>
     <meta name="description" content="William Karras is an innovative musician, composer for Theatre and Film, who received support and praise by multiple organization like the CALQ and SOCAN. He also works as musical director in musical theatre.">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="script" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Rasa:400,700|Roboto:400,500,700&display=swap" rel="stylesheet">
 
     <link rel="icon" href="images/wklogo.png">
@@ -27,11 +26,11 @@
         </div>
     </div>
     <div class="page2">
-        <div class="brunchlargerbox">
-            <div class="brunchtext">
-                <h1 class="brunchtitle">Contact Me</h1>
+        <div class="contact-box">
+            <div class="contact-text">
+                <h1 class="contact">Contact Me</h1>
                 <div class="elgringo">
-                    <span class="showdecription">    <form action="https://formsubmit.co/william.karras@gmail.com" method="POST">
+                    <span class="contact-form">    <form action="https://formsubmit.co/william.karras@gmail.com" method="POST">
                         <input type="text" name="_honey" style="display:none">
                         <input type="hidden" name="_captcha" value="false">
                       
@@ -70,5 +69,27 @@
             <a href="https://open.spotify.com/album/4ZeuofdsUoqm1EsTo4dX0B?si=G_12BMDoTrOaLFtWq2pKdQ" target="_blank"><img src="images/spotify.png" width="42" height="42"></a>
         </div>
     </div>
+    <script>const scrollText = document.querySelector('.scrolldown');
+        const page1 = document.querySelector('.page1');
+        
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              // page1 is visible
+              scrollText.classList.remove('hidden');
+            } else {
+              // page1 is not visible
+              scrollText.classList.add('hidden');
+            }
+          });
+        }, {
+          root: null, // viewport
+          threshold: 0.5 // consider visible if at least 50% visible
+        });
+        
+        observer.observe(page1);
+
+      
+      </script>
 </body>
 </html>
