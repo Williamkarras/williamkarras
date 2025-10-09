@@ -38,24 +38,19 @@
                         <input type="hidden" name="_captcha" value="true">
                       
                         <label for="name">Name:</label><br>
-                        <input type="text" id="name" name="name" required><br>
+                        <input type="text" id="name" name="name" required><br><br>
                       
                         <label for="email">Email:</label><br>
-                        <input type="email" id="email" name="email" required><br>
+                        <input type="email" id="email" name="email" required><br><br>
                       
                         <label for="message">Message:</label><br>
-                        <textarea id="message" name="message" rows="4" cols="30" required></textarea><br>
-                      <div class="math-challenge">
-                        <label for="mathAnswer">Please solve this to verify you're human:</label><br>
-                        <span id="mathQuestion"></span>
-                        <input type="number" id="mathAnswer" placeholder="Your answer" required>
-                        <div id="mathError" class="error"></div>
-                    </div>
+                        <textarea id="message" name="message" rows="4" cols="30" required></textarea><br><br>
+                      
                         <button type="submit">Send</button>
                       </form>
                     </span>
                 
-                </div>
+                </div><br>
             </div>
                  <div id="brunch-container">
     <!-- Brunch section will be inserted here on desktop only -->
@@ -127,33 +122,5 @@ if (window.innerWidth > 768) {
     `;
 }
       </script>
-      <script>
-    let num1, num2, correctAnswer;
-    
-    function generateMathQuestion() {
-        num1 = Math.floor(Math.random() * 10) + 1;
-        num2 = Math.floor(Math.random() * 10) + 1;
-        correctAnswer = num1 + num2;
-        document.getElementById('mathQuestion').textContent = `What is ${num1} + ${num2}?`;
-    }
-    
-    generateMathQuestion();
-    
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        const userAnswer = parseInt(document.getElementById('mathAnswer').value);
-        const errorDiv = document.getElementById('mathError');
-        
-        if (userAnswer !== correctAnswer) {
-            e.preventDefault();
-            errorDiv.textContent = 'Incorrect answer. Please try again.';
-            generateMathQuestion();
-            document.getElementById('mathAnswer').value = '';
-            return false;
-        }
-        
-        errorDiv.textContent = '';
-        return true;
-    });
-</script>
 </body>
 </html>
